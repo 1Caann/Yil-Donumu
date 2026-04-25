@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Anılarımız ❤️</title>
+    <style>
+        body 
+            {
+                margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            padding: 50px 20px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        .timeline {
+            display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 40px;
+    max-width: 1100px;
+    margin: auto;
+        }
+
+        .card {
+            background: white;
+    color: black;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            width: 100%;
+    height: 200px;
+    object-fit: cover;
+        }
+
+        .card p {
+            padding: 10px;
+    font-size: 0.9em;
+        }
+
+        footer {
+            padding: 30px;
+            color: white;
+        }
+        .card p {
+        padding: 20px;
+        font-size: 1.1em;
+        line-height: 1.6;
+    </style>
+    <style>
+@media (max-width: 768px) {
+
+    /* GALERİ */
+    .timeline {
+        grid-template-columns: 1fr !important;
+        padding: 15px !important;
+        gap: 15px;
+    }
+
+    /* KARTLAR */
+    .card img {
+        height: 220px !important;
+    }
+
+    /* MODAL */
+    #modal > div {
+        flex-direction: column !important;
+        gap: 15px !important;
+        width: 95% !important;
+    }
+
+    /* FOTO */
+    #modalImg {
+        max-height: 40vh !important;
+    }
+
+    /* METİN */
+    #modalText {
+        font-size: 16px !important;
+        text-align: center !important;
+    }
+
+    /* TARİH */
+    #modalDate {
+        font-size: 13px !important;
+        text-align: center !important;
+    }
+
+    /* BAŞLIK */
+    h1 {
+        font-size: 24px !important;
+    }
+
+    p {
+        font-size: 14px !important;
+    }
+    * {
+    -webkit-tap-highlight-color: transparent;
+}
+}
+</style>
+    
+    
+    }
+    
+</head>
+<body>
+    <audio id="bgmusic" src="Coldplay-Sparks.mp3" loop></audio>
+   <div id="modal" style="
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: rgba(0,0,0,0.5);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+backdrop-filter: blur(12px);
+z-index:9999;
+justify-content:center;
+align-items:center;
+">
+
+    <div style="
+    display:flex;
+    gap:40px;
+    width:90%;
+    max-width:1000px;
+    ">
+
+        <!-- SOL -->
+        <div style="flex:1; text-align:center;">
+            <img id="modalImg" style="
+            width:100%;
+            border-radius:15px;
+            ">
+
+            
+            <p id="modalDate" style="
+color:white;
+margin-top:10px;
+padding:8px 15px;
+border-radius:12px;
+
+background: rgba(0,0,0,0.5);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+background: rgba(255,255,255,0.1);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+
+
+">
+</p>
+</p>
+        </div>
+
+        <!-- SAĞ -->
+        <div style="
+        flex:1;
+        display:flex;
+        align-items:center;
+        ">
+
+            <div style="
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding:25px;
+            border-radius:20px;
+            ">
+
+                <p id="modalText" style="
+                color:white;
+                font-size:18px;
+                line-height:1.6;
+                "></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- KAPAT -->
+    <button onclick="kapat()" style="
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+    ">
+        ✖
+    </button>
+
+</div>
+
+        </div>
+
+    </div>
+
+    <button onclick="kapat()" style="
+    position:absolute;
+    top:20px;
+    right:20px;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    background:#ff4d6d;
+    color:white;
+    cursor:pointer;
+    ">
+        ✖
+    </button>
+
+</div>
+
+    </div>
+
+</div>
+</div>
+
+
+<header>
+    <h1 style="color:#2b1b24; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+    ONE YEAR WİTH US ❤️
+</h1>
+
+<p style="color:#3b2a33;">
+    Seninle geçen 365 gün...
+</p>
+</header>
+
+<div class="timeline">
+
+    <div class="card" onclick="ac(this)">
+    <img src="foto1.jpeg">
+    <p>📅 İlk Gün</p>
+
+    <div class="tarih" style="display:none;">
+        22 Nisan 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Her şeyin Başlangıcı olan o buluşma.. Çok gergin ve stresliydim, başbaşa durmayı çok istememe rağmen gerginliğim izin vermemişti çünkü rahat davranamamıştım ilk kez buluştuğumuz için.
+    </div>
+</div>
+<div class="card" onclick="ac(this)">
+    <img src="foto2.jpeg">
+
+    <p>📅 İlk Buluşma</p>
+
+    <div class="tarih" style="display:none;">
+        1 Mayıs 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Yolculuğumuzun başladığı o "first date". utandım konuşamadım, yemek yerken bile saçma salak bir şey yemiştim heyecandan ve gerginlikten ama sonrasında çok güzel ve  çok heyecanlı bir gün geçirmiştik.
+    </div>
+</div>
+<div class="card" onclick="ac(this)">
+    <img src="foto4.jpeg">
+
+    <p>📅 Atam</p>
+
+    <div class="tarih" style="display:none;">
+        10 Mayıs 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Birlikte gittiğimiz ilk müze Atamın olduğu müzeydi, çok güzeldi oraya seninle bir kez daha gitmek..
+    </div>
+</div>
+    <div class="card" onclick="ac(this)">
+    <img src="foto3.jpeg">
+
+    <p>📅 İlk Oyun</p>
+
+    <div class="tarih" style="display:none;">
+        16 Mayıs 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        İlk defa Stardew valley oynamıştın, o kadar tatlıydın ki seni izlerken gözlerim parlıyordu.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto5.jpeg">
+
+    <p>📅 İlk Lego</p>
+
+    <div class="tarih" style="display:none;">
+        1 Haziran 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        İlk Yaptığımız legolaarrrr, çok tatlılardı yaparken o kadar eğlenmiştim kiiiiiiii, umarım hep birlikte legolar yaparızzzz
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto6.jpeg">
+
+    <p>📅 İlk Yolculuk</p>
+
+    <div class="tarih" style="display:none;">
+        4 Haziran 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Birlikte yapacağımız ilk yolculuktu biraz gergindim, ama sonradan heyecana dönüştü. otobüs bomboştuu sanki bize özel ayrılmış gibi, gecemiz çok güzel geçmişti sarılarak uyumuştuk.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto7.jpeg">
+
+    <p>📅 Tatildeki İlk Buluşma</p>
+
+    <div class="tarih" style="display:none;">
+        17 Haziran 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Kocaelideki ilkkk buluşmamızzz, sahil kenarında oturup sarılmıştık, günşte gözlerin çok güzel parıyordu.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto8.jpeg">
+
+    <p>📅 Kocaelideki İlk Buluşma</p>
+
+    <div class="tarih" style="display:none;">
+        17 Haziran 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bu da o günün akşamı tren garına giderkendi.. gün batımı yüzümüze o kadar güzel vuruyordu kii gözlerimi alamamıştım senden.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto9.jpeg">
+
+    <p>📅 Gün Batımı</p>
+
+    <div class="tarih" style="display:none;">
+        20 Temmuz 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Dünyanın en iyi fotosu falan bu... en yakınlarınla tanıştığım gün o kadar heyecanlıydım ki, neyse ki çok iyi geçmişti çok kaynaşmıştık hemen
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto10.jpeg">
+
+    <p>📅 Dostikolar</p>
+
+    <div class="tarih" style="display:none;">
+        20 Temmuz 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bu da tren garında hep birlikte olan fotoğraımız, gerçekten ama gerçekten o adar istemiştim ki sizinle sahile gelmeyi.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto11.jpeg">
+
+    <p>📅 İlk Photobooth</p>
+
+    <div class="tarih" style="display:none;">
+        27 Temmuz 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bu sefer de sen bizimkilerle tanışmak için gelmiştn ve ilk defa fotobota girmiştik(gizli bir kaçamak ile) 
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto12.jpeg">
+
+    <p>📅 Yine Bir Tren Garı</p>
+
+    <div class="tarih" style="display:none;">
+        27 Temmuz 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Her güzel fotomuz tren garının öznünde falan nedense afjahghdjtmdfs neyyse, bu fotoğrafımızı seviyorum cok tatlı bence en sevdiklerimleyim..
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto13.jpeg">
+
+    <p>📅 İlk Çiçek</p>
+
+    <div class="tarih" style="display:none;">
+        10 Ağustos 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bebeğime aldığım ilk çiçek.. son olmayacak. ÇİÇEKLE O KADAR TATLI DURUYODUN Kİ.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto14.jpeg">
+
+    <p>📅 Tatilin Son Buluşması</p>
+
+    <div class="tarih" style="display:none;">
+        17 Ağustos 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Son olduğunu bilmeden aşırı güzel bir gün geçirmiştik ama işim ve tatilin bitmesine yakın olduğu için bir daha buluşamamıştık. bu fotoğrafda çok tatlı aşırı seviyorum, çünkü senin gülüşün çok güzel.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto15.jpeg">
+
+    <p>📅 Sivastaki İlk Buluşma</p>
+
+    <div class="tarih" style="display:none;">
+        15 Eylül 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        O kadar özlemiştim kiiiiiiiiiii, of yani cok iyi gelmişti yine aynı yerde oturup sohbet etmek
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto16.jpeg">
+
+    <p>📅 Anlık</p>
+
+    <div class="tarih" style="display:none;">
+        19 Eylül 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Sanırım market geziyorduk ama kiminle hatırlamıyorum bile, sen yanımda olunca gerisi boş.. çok ama çok tatlıydı anlık foto çekiniyorrdukkk.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto17.jpeg">
+
+    <p>📅 Ahtapot/p>
+
+    <div class="tarih" style="display:none;">
+        22 Eylül 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Benim Biricikkkk bebeğimmlee avmde mr.dıy geziyordukk çok tatlı bi gündü ilk defa avmyi o kadar gezmiştimm.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto18.jpeg">
+
+    <p>📅 Hamburger</p>
+
+    <div class="tarih" style="display:none;">
+        24 Eylül 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+       Bebeğim ve Hmaburger yerken çekilen fotoğrafları.. çok tatlı çıkıyorsun ama napayımm. agaca yaslanıp gokyuzunu ve birbirimizi seyretmiştik çok romantik ve hoştu.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto19.jpeg">
+
+    <p>📅 ...</p>
+
+    <div class="tarih" style="display:none;">
+        12 Ekim 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bugün... Ömrümün en anlamlı ve en özel günüydü. İlk defa doğum günümü böyle içten ve güzel hissettim. en değerlim, kendi kurduğum ailenin başrolü olacak kadının bu kadar şey yapması çok hoştu çok duygulanmıştım.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto20.jpeg">
+
+    <p>📅 İstanbul</p>
+
+    <div class="tarih" style="display:none;">
+        24 Ekim 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        İlk defa hayatımda istanbula hem kalmaya hem gezmeye gidicektim ve seninle gitmek daha da özel kıldı o anı. çok eğlendiğim çok güzel geceler geçirdiğim bir tatildi.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto21.jpeg">
+
+    <p>📅 Manzara</p>
+
+    <div class="tarih" style="display:none;">
+        26 Ekim 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bir şairin evinin manzarası bu kadar güzel olmalıydı zaten.. o manzaraya da en çok sen yakışırdın. bakışmamız mavi tonlarına o kadar ahenk katmışki odak direkt fotoda olmuş..
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto22.jpeg">
+
+    <p>📅 Boğazz</p>
+
+    <div class="tarih" style="display:none;">
+        26 Ekim 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Vapura daha önce binmiştim ama böylesine değerli biricik aşkımla bir farklıydı.. baksana aramıza cok guzelllll. boğazın karanlığı köprünün ışıklarıyla uyumlu fotomuzzz.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto23.jpeg">
+
+    <p>📅 Yorgun</p>
+
+    <div class="tarih" style="display:none;">
+        27 Ekim 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Geri dönüş bi hayli yorucuydu evet.. bitkin özüm çok tatlıydı ama hafif stresli komut vermelerin falan hoşuma gidiyordu.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto24.jpeg">
+
+    <p>📅 İlk Defa Uçak</p>
+
+    <div class="tarih" style="display:none;">
+        27 Ekim 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Aşırı gergindim. İlk defa uçağa binicektim ama yanımda sen olduğundan gerginliğim uçup gitti :). Sen omzuma yatınca ve gün batımını izleyince anladım gerçek zenginliği seninle bulduğumu.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto25.jpeg">
+
+    <p>📅 Tatlima Tatli </p>
+
+    <div class="tarih" style="display:none;">
+        13 Kasım 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bir tartışma sonunda ben de yaparım ne var demenin üzerine yaptığım, normal koşullarda bence cok guzel olucak o tatli sansımıza yagmurlu bir gune denk geelmisti ve sürekli allamıstık o yuzden biraz garip duruydu..
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto26.jpeg">
+
+    <p>📅 THE Ekip</p>
+
+    <div class="tarih" style="display:none;">
+       15 Kasım 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+       İlk double dateimizdi. terra pizza yemiştik ve o kadar güzeldi kiiiiii.  bu günü de  çok seviyorum hırslı özüm çok tatlı oluyor biraz bana sert çıkışıyor olsan da.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto27.jpeg">
+
+    <p>📅 The REDBULL</p>
+
+    <div class="tarih" style="display:none;">
+        27 Aralık 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        1 aylık ayrı kalmamızdan sonra geri gelmiştin ve yanında muhteşem bir hediyeyle... REDBULL F1 LEGOSUUUUUU DUNYAIN EN AMA EN İYİ HEDİESİYDDİİİİİİİİ... yaparken cok eglenmistimmmm.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto28.jpeg">
+
+    <p>📅 YılBaşı</p>
+
+    <div class="tarih" style="display:none;">
+        31 Aralık 2025
+    </div>
+
+    <div class="detay" style="display:none;">
+        İlk defa yılbaşında dışardaydım ve yine en sevdiğim insanlaydım.. çokkkkkk keyifliydi, floridadaki eğlenmemiz de öyleydii.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto29.jpeg">
+
+    <p>📅 Brawl Stars</p>
+
+    <div class="tarih" style="display:none;">
+        12 Ocak 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bebeğimmlee oyun keyfiiii... cok özledim seninle brawl stars oynamayıııııııı
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto30.jpeg">
+
+    <p>📅 İlk Buluşma</p>
+
+    <div class="tarih" style="display:none;">
+        23 Ocak 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Rümeysa ile tanışma gününüz. çok birlikte olamasakta yinede güzel bir gundu. çok endiselenip uzulmustum haberi alınca tekrardan basın sagolsun hayatım.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto31.jpeg">
+
+    <p>📅 Sevililer Gunu</p>
+
+    <div class="tarih" style="display:none;">
+        14 Şubat 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        İkimşzşnde yalnız olmadığı ilk sevgililer günüydü hediyeleri özenle seçmeme rağmen seninkinin yanında gerçekten soluk kaldııı çok beğendim tişörtüüüüü ooofff çok güzel bir gündü o gün yeniden şükrettim seninle olduğum her gün için
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto32.jpeg">
+
+    <p>📅 THE Gangsters</p>
+
+    <div class="tarih" style="display:none;">
+        14 Şubat 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Sevgililer gününün akşamı yurda giderken anlık çekilmiştik ve o kadar havalı bir fotoğraf kiii hala kilit ekranım olarak kullanıyorum.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto33.jpeg">
+
+    <p>📅 Küslük Sonrası</p>
+
+    <div class="tarih" style="display:none;">
+        21 Şubat 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Kendime çekidüzen verdim. o küslükten sonra eminim ki daha iyi olduk çok salaklığım yüzündendi ama neyseki affetirebildim kendimi, bu arada çiçeği beğenmene çok mutlu olmuştum.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto34.jpeg">
+
+    <p>📅 Bowlinggg</p>
+
+    <div class="tarih" style="display:none;">
+        7 Mart 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bir sene sonra bu sefer sevgili olarak yaptığımız iftar sonrası bowlinge gitmiştikk o kadar güzeldii kiii her atışında sana sarılmak sen atarken belinden tutup nasıl olacağını göstermek falan çok hoş bi akşamdı.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto35.jpeg">
+
+    <p>📅 Yenilgi Çiçeği</p>
+
+    <div class="tarih" style="display:none;">
+        7 Mart 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        O gün seçtğim çiçek özeldi renklerini hep düşünerek falan seçmiştimm, sen de beğendiğinde çok mutluydum, her çiçekle foto çekinirken sanki zaman geçmişte aile olmuşuz gibi geliyor nedense.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto36.jpeg">
+
+    <p>📅 Sabah Uçağı</p>
+
+    <div class="tarih" style="display:none;">
+        11 Mart 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Ramazan tatili iin gidiyorduk ama sıcaktan kavrulmuştummmmm. tabiki özüm hanımın bossluğu simirli emirleri vardı.. çok tatlı duruyosun neyseki.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto37.jpeg">
+
+    <p>📅 Geri Dönüş</p>
+
+    <div class="tarih" style="display:none;">
+        23 Mart 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Başta ayrı ayrı yerde otusakta yan yana oturunca ve sarılınca o kadar rahatlamıştım ki o gün. tren içinde yasaananları yüzyüze konusalim canim.. :)
+
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto38.jpeg">
+
+    <p>📅 Bebeğim Fakülteliii</p>
+
+    <div class="tarih" style="display:none;">
+        25 Mart 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Bebeğim artık edebiyat fakültesindeeeee. çok tatlı çıkmışızzzzz
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto39.jpeg">
+
+    <p>📅 Bak: Biz</p>
+
+    <div class="tarih" style="display:none;">
+        31 Mart 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        O gün salihle yürürken bi anda uzaktan gördüm bu çizimi ve aklıma direkt sen geldin. bize benzettim. çok tatlı bi çizimdi
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto40.jpeg">
+
+    <p>📅 Kırık Ayak</p>
+
+    <div class="tarih" style="display:none;">
+        7 Nisan 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Ayak hastalığından sonraki ilk görüşmemiz, hala bazen canım acıyor ama olan oldu sonuclarına katlanıyorum, o zmaan en uzuldugum sey bi sure seni göremicek olmamdı, neyseki suan yuruyebliyorum.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto41.jpeg">
+
+    <p>📅 Doğum Günü</p>
+
+    <div class="tarih" style="display:none;">
+        16 Nisan 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+       Elimde pembe puantiyeli poşet ve mavili pembeli bahar tmesili çiçek ile bebeğimi hasbahçeye götürmüş oturmuşyumm. çok ama çok güzeldii o gün umarım hediyelerimi de beğenmişsindir bebeğim.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto42.jpeg">
+
+    <p>📅 ÖHM ÖHM</p>
+
+    <div class="tarih" style="display:none;">
+        16 Nisan 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Koymazsam olmazdı... çok hoş çok romantik ve çok öhm öhm bir fotoo, doğum gününn e kadar güzel geçtğini anlatıyor.
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto43.jpeg">
+
+    <p>📅 Ruh İkizim</p>
+
+    <div class="tarih" style="display:none;">
+       16 Nisan 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Sen beni öünce o kadar rahatlıyorum ki anlatamam.. dudağın her değdiğinde bana bi rahatlama geliyor bi yuzum guluyor. hep op beni bebegim. oh
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto44.jpeg">
+
+    <p>📅 Mavi</p>
+
+    <div class="tarih" style="display:none;">
+        16 Nsan 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Çok güzel bir foto bu arada aşırı sevdim. etrafın koyu mavileşmesi bizim öen çıkmamız falan off yaniii.. uzun lafın kısası İYİ Kİ DOĞDUN TEKRARDAN BEBEĞİMMMM
+    </div>
+</div><div class="card" onclick="ac(this)">
+    <img src="foto45.jpeg">
+
+    <p>📅 Nevada</p>
+
+    <div class="tarih" style="display:none;">
+        23 Nisan 2026
+    </div>
+
+    <div class="detay" style="display:none;">
+        Filmi çok sevemedim ama seninle geçen o günümüz çok güzeldi.. o crobunu seviyorum sen endenin biliyorsunnnn. o gün yaptığmız 1 mayısta ne yapsak planı cok guzeldii
+    </div>
+</div>
+
+</div>
+    
+
+</div>
+
+<footer>
+    <p>UZUN LAFIN KISASI NİCE MUTLU YILDÖNÜMLERİNE BEBEĞİM 
+        İYİ Kİ HAYATIMA GİRDİN.. 1. YILIMIZ KUTLU OLSUN ❤️</p>
+</footer>
+
+</body>
+</html>
+<script> let musicStarted = false;
+
+function baslatMusic() {
+    if (!musicStarted) {
+        document.getElementById("bgmusic").play();
+        musicStarted = true;
+    }
+}
+ let cards = document.querySelectorAll(".card");
+let currentIndex = 0;
+
+function ac(card) {
+    baslatMusic();
+
+    cards = document.querySelectorAll(".card");
+
+    currentIndex = Array.from(cards).indexOf(card);
+
+    openCard(currentIndex);
+} 
+function openCard(i) {
+
+    let card = cards[i];
+
+    document.getElementById("modal").style.display = "flex";
+
+    document.getElementById("modalImg").src =
+        card.querySelector("img").src;
+
+    document.getElementById("modalText").innerText =
+        card.querySelector(".detay").innerText;
+
+    document.getElementById("modalDate").innerText =
+        card.querySelector(".tarih").innerText;
+
+    currentIndex = i;
+}
+
+function kapat() {
+    document.getElementById("modal").style.display = "none";
+    document.body.style.overflow = "auto";
+}
+let startX = 0;
+
+document.getElementById("modal").addEventListener("touchstart", function(e) {
+    startX = e.touches[0].clientX;
+});
+
+document.getElementById("modal").addEventListener("touchend", function(e) {
+
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+        if (currentIndex < cards.length - 1) {
+            openCard(currentIndex + 1);
+        }
+    }
+
+    if (endX - startX > 50) {
+        if (currentIndex > 0) {
+            openCard(currentIndex - 1);
+        }
+    }
+});
+function fadeInMusic(audio, targetVolume = 1, duration = 2000) {
+    audio.volume = 0;
+    audio.play();
+
+    let step = 50;
+    let increment = targetVolume / (duration / step);
+
+    let fade = setInterval(() => {
+        if (audio.volume < targetVolume) {
+            audio.volume = Math.min(audio.volume + increment, targetVolume);
+        } else {
+            clearInterval(fade);
+        }
+    }, step);
+}
+</script> 
